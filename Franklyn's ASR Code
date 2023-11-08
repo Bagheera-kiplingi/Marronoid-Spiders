@@ -1,0 +1,94 @@
+install.packages("phytools")
+install.packages("ggplot2")
+install.packages('ape',dependencies = T)
+install.packages("phangorn")
+install.packages("maps")
+install.packages("mnormt")
+
+## set seed for reproducibility
+
+library(ape)
+library(phytools)
+library(ggplot2)
+library(phangorn)
+library(maps)
+library(mnormt)
+
+# Reconstruction of Discrete Variables in a Molecular Phylogeny:
+
+# Read the phylogenetic tree from a file
+
+wd <- "C:/Users/fcala/Documents/RPROYECTO/DATA/DATA"
+setwd(wd)
+getwd()
+tree <- read.nexus("ARBOL.tree")
+tree
+
+plotTree(tree)
+title("UCE Marronoid")
+
+# Read character data from CSV file
+## read in full morphological data - make sure your file contains a column that 
+## matches the names on your phylogeny - specify that column under rownames argument
+
+svl<-read.csv("character_data.csv",row.names=1) ## or
+svl
+
+## change this into a vector
+svl<-as.matrix(svl)[,1]
+svl
+
+
+
+## setEnv=TRUE for this type is experimental. please be patient with bugs
+cols<-setNames(palette()[1:length(unique(svl))],sort(unique(svl)))
+tiplabels(pie=to.matrix(svl,sort(unique(svl))),piecol=cols,cex=0.3)
+add.simmap.legend(colors=cols,prompt=FALSE,svl=0.9*par()$usr[1],
+                  y=-max(nodeHeights(tree)),fsize=0.8)
+
+
+## estimate ancestral states under a ER model
+fitER<-ace(svl,tree,model="ER",type="discrete")
+fitER
+round(fitER$lik.anc,3)
+
+#The element lik.anc gives us the marginal ancestral states, also known as the 'empirical Bayesian posterior probabilities.'
+plotTree(tree,fsize=0.8,ftype="i")
+
+## setEnv=TRUE for this type is experimental. please be patient with bugs
+nodelabels(node=1:tree$Nnode+Ntip(tree),
+           pie=fitER$lik.anc,piecol=cols,cex=0.5)
+tiplabels(pie=to.matrix(svl,sort(unique(svl))),piecol=cols,cex=0.3)
+add.simmap.legend(colors=cols,prompt=TRUE,x=0.9*par()$usr[1],
+                  y=-max(nodeHeights(tree)),fsize=0.8)
+
+## simulate single stochastic character map using empirical Bayes method
+mtree<-make.simmap(tree,svl,model="ER")
+## make.simmap is sampling character histories conditioned on the transition matrix
+## Q =
+
+mtree ## Done.
+plot(mtree,cols,fsize=0.8,ftype="i") 
+
+## setEnv=TRUE for this type is experimental. please be patient with bugs
+add.simmap.legend(colors=cols,prompt=FALSE,x=0.9*par()$usr[1],
+                  y=-max(nodeHeights(tree)),fsize=0.8)
+
+mtrees<-make.simmap(tree,svl,model="ER",nsim=100) ## make.simmap is sampling character histories conditioned on the transition matrix
+mtrees
+
+## 100 phylogenetic trees with mapped discrete characters
+par(mfrow=c(10,10))
+null<-sapply(mtrees,plot,colors=cols,lwd=1,ftype="off")
+
+## 100 trees with a mapped discrete character with states:
+pd<-summary(mtrees,plot=FALSE)
+pd
+plot(pd,fsize=0.6,ftype="i")
+## now let's plot a random map, and overlay the posterior probabilities
+plot(mtrees[[1]],cols,fsize=0.8,ftype="i")
+
+## setEnv=TRUE for this type is experimental. please be patient with bugs
+nodelabels(pie=pd$ace,piecol=cols,cex=0.5)
+add.simmap.legend(colors=cols,prompt=FALSE,x=0.9*par()$usr[1],
+                  y=-max(nodeHeights(tree)),fsize=0.8)
