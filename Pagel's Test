@@ -1,0 +1,56 @@
+#Pagel's Test from Phylogentic Tools for Comparitive Biology Blog: http://blog.phytools.org/2014/12/r-function-for-pagels-1994-correlation.html
+
+## first load packages & source code
+library(phytools)
+library(geiger)
+source("fitPagel.R")
+.check.pkg<-phytools:::.check.pkg
+
+## now let's simulate some uncorrelated data
+tree<-pbtree(n=300,scale=1)
+Q<-matrix(c(-1,1,1,-1),2,2)
+rownames(Q)<-colnames(Q)<-letters[1:2]
+tt1<-sim.history(tree,Q)
+
+tt2<-sim.history(tree,Q)
+
+## these are uncorrelated, see:
+par(mfrow=c(1,2))
+plotSimmap(tt1,setNames(c("blue","red"),letters[1:2]),ftype="off",lwd=1)
+plotSimmap(tt2,setNames(c("blue","red"),letters[1:2]),ftype="off",lwd=1,direction="leftwards")
+
+x<-tt1$states
+y<-tt2$states
+fit.ape<-fitPagel(tree,x,y)
+fit.ape
+
+fit.geiger<-fitPagel(tree,x,y,method="fitDiscrete")
+
+fit.geiger
+
+Q<-matrix(c(0,0.5,0.5,0,2,0,0,2,2,0,0,2,0,0.5,0.5,0),4,4,byrow=TRUE)
+rownames(Q)<-colnames(Q)<-c("aa","ab","ba","bb")
+diag(Q)<--rowSums(Q)
+tt<-sim.history(tree,t(Q))
+
+tt1<-mergeMappedStates(tt,c("aa","ab"),"a")
+tt1<-mergeMappedStates(tt1,c("ba","bb"),"b")
+tt2<-mergeMappedStates(tt,c("aa","ba"),"a")
+tt2<-mergeMappedStates(tt2,c("ab","bb"),"b")
+
+## these data are correlated, see:
+
+par(mfrow=c(1,2))
+plotSimmap(tt1,setNames(c("blue","red"),letters[1:2]),ftype="off",lwd=1)
+plotSimmap(tt2,setNames(c("blue","red"),letters[1:2]),ftype="off",lwd=1,direction="leftwards")
+
+x<-getStates(tt1,"tips")
+y<-getStates(tt2,"tips")
+fit.ape<-fitPagel(tree,x,y)
+fit.ape
+
+fit.geiger<-fitPagel(tree,x,y,method="fitDiscrete")
+
+fit.geiger
+
+
