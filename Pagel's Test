@@ -1,4 +1,7 @@
 #Pagel's Test from Phylogentic Tools for Comparitive Biology Blog: http://blog.phytools.org/2014/12/r-function-for-pagels-1994-correlation.html
+#install packages 
+install.packages(phytools)
+install.packages(geiger)
 
 ## first load packages & source code
 library(phytools)
