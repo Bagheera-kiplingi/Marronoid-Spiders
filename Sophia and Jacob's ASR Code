@@ -1,0 +1,159 @@
+#load libraries
+library(phytools)
+library(corHMM)
+
+#import_spreadsheet
+asr=read.csv("/Users/sophiadel/Downloads/spreadsheet_asr.csv",row.names=1)
+row.names(asr)
+
+#import tree
+tree <- read.nexus("/Users/sophiadel/Desktop/treefile_shalrt_marronoids_dictynids_Sep11.tre", tree.names = NULL, force.multi = FALSE)
+
+#initial dropped is taxa we don't have any data far (essentially just the 155 in the asr spreadsheet)
+dropped=c("Ajmonia_sp_SouthAfrica_8603_UCE","Arangina_sp_Australia_3640_UCE","Archaeodictyna_sp_SouthAfrica_8885_UCE","Argyroneta_aquatica_China_UCE","Argyroneta_aquatica_Denmark_UCE","Argyroneta_aquatica_Japan_UCE","Brigittea_sp_India_UCE","Brigittea_sp_Myanmar_UCE","Brommella_punctosparsa_UCE","cf_Lathys_sp_Germany_UCE","Dictyna_arundinacea_Russia_UCE","Dictyna_foliicola_UCE","Dictyna_felis_UCE","Dictynidae_sp_3_UCE","Dictynidae_sp_Madagascar_5992_UCE","Dictynidae_sp_South_Africa_UCE","Dictynidae_sp_SouthAfrica_8884_UCE","Hahniidae_sp_Madagascar_UCE","Hahniidae_sp_South_Africa_UCE","Heteropoda_simplex_UCE","Lathys_humilis_Canada_11_UCE","Lathys_humilis_Canada_82_UCE","Lathys_maculosa_Japan_UCE","Macrobunidae_sp_Africa_UCE","Macrobunidae_sp_UCE","Macrolathys_sp_Gabon_UCE","Macrolathys_sp_Tanzania_UCE","Metaltella_simoni_079_UCE","Mizaga_racovitzai_UCE","Pacificana_cockayni_UCE","Saltonia_incerta_1755_UCE","Paraharctella_sp_Australia_7383_UCE","Sudesna_sp_China_2426_UCE","NA")
+
+#dropped tips and double checked
+trimmed_tree=drop.tip(tree,dropped)
+trimmed_tree
+plot(trimmed_tree)
+
+###HABITAT
+#create habitat specific tree by removing all tips that have an NA for this value
+remove_from_hab=c("Ajmonia_sp_China_UCE","Ajmonia_sp_SouthAfrica_8899_UCE","Altella_lucida_Canada_UCE","Anaxibia_caudiculata_Myanmar_UCE","Anaxibia_difficilis_SaoTome_UCE","Arangina_sp_NewZealand_UCE","Arctella_lapponica_Canada_UCE","Argenna_obesa_Canada_UCE","Argenna_subnigra_Finland_UCE","Bannaella_tibialis_China_UCE","Brigittea_latens_Bulgaria_UCE","Brigittea_sp_SouthAfrica_8890_UCE","Brigittea_sp_Crete_69_UCE","Callevophthalmus_sp_Australia_UCE","Cybaelous_pusillus_UCE","Devade_sp_Australia_UCE","Devade_tenella_Russia_UCE","Dictyna_agressa_CA_UCE","Dictyna_arundinacea_Finland_UCE","Dictyna_calcarata_AZ_UCE","Dictyna_cf_andesiana_cf_incredula_UCE","Dictyna_cholla_MX_UCE","Dictyna_cf_incredula_Chile_UCE","Dictyna_formidolosa_GA_UCE","Dictyna_uncinata_Germany_UCE","Emblyna_aiko_MX_UCE","Emblyna_completa_Canada_UCE","Emblyna_mitis_China_UCE","Emblyna_osceola_TurksCaicos_UCE","Emblyna_piratica_CA_UCE","Emblyna_serena_CA_UCE","Funny_valentine_UCE","Hackmania_prominula_Canada_UCE","Lathys_alberta_China_UCE","Lathys_chishuiensis_China_UCE","Lathys_insulana_Japan_UCE","Lathys_sp_n_CentralAfricanRepublic_UCE","Lathys_subalberta_China_UCE","Mallos_dugesi_AZ_UCE","Mallos_pallidus_USA_UCE","Mashimo_sp_SouthAfrica_3223_UCE","Phantyna_micro_Canada_UCE","Sudesna_hedini_SouthKorea_UCE","Sudesna_sp_China_2249_UCE","Tahuantina_zapfeae_Chile_UCE","Thallumetus_cf_simoni_Ecuador_UCE","Tivyna_spatula_Peru_UCE","Tricholathys_cf_hirsutipes_CA_UCE","Tricholathys_sp_CA_UCE")
+habitat_tree=drop.tip(trimmed_tree,remove_from_hab)
+plot(habitat_tree)
+
+#extract habitat
+habitat=setNames(asr[,1],rownames(asr))
+factorized_habitat=as.factor(habitat)
+
+#remove NAs from habitat dataset
+no.na.hab<-habitat[!is.na(habitat)]
+no.na.hab=as.factor(no.na.hab)
+
+#map data matrix to tips (can either use habitat OR no.na.hab here)
+cols<-setNames(c("green","blue"),levels(no.na.hab))
+plotTree.datamatrix(trimmed_tree,as.data.frame(no.na.hab),colors=list(cols),header=FALSE,fsize=0.25)
+legend("topright",legend=levels(no.na.hab),pch=22,pt.cex=1.5,pt.bg=cols,bty="n",cex=0.8)
+
+#model fitting for ancestral state reconstruction
+#fit ER (equal rates) model, least complex model
+fitER=fitMk(habitat_tree,no.na.hab,model="ER")
+#fit ARD (all rates different) model, less complex model
+fitARD=fitMk(habitat_tree,no.na.hab,model="ARD")
+#fit SYM (?symmetric model) model, most complex model (of the three)
+fitSYM=fitMk(habitat_tree,no.na.hab,model="SYM")
+
+#examine AIC values (Akaike Information Criterion, we want this to be as low as possible to indicate better fit)
+aic=c(AIC(fitER),AIC(fitARD),AIC(fitSYM))
+data.frame(model=c("ER","ARD","SYM"),logL=c(logLik(fitER),logLik(fitARD),logLik(fitSYM)),AIC=aic, delta.AIC=aic-min(aic))
+
+#put habitat date in dataframe for corHMM
+hab.data=data.frame(taxon=names(no.na.hab),no.na.hab=as.numeric(no.na.hab)-1)
+
+#fit marginal ancestral state reconstruction (you can also do joint ancestral state reconstructions)
+fit.marginal=corHMM(habitat_tree,hab.data,node.states="marginal",rate.cat=1,rate.mat = matrix(c(NA,1,1,NA),2,2))
+fit.marginal
+
+plotTree.datamatrix(habitat_tree,as.data.frame(no.na.hab),colors=list(cols),header=FALSE,fsize=0.25)
+legend("topright",legend=levels(no.na.hab),pch=22,pt.cex=1.5,pt.bg=cols,bty="n",cex=0.8)
+nodelabels(pie=fit.marginal$states,piecol=cols,cex=0.5)
+
+
+
+###WEB
+
+#create web specific tree by removing all tips that have an NA for this value
+#which(is.na(asr$Revised_Web), arr.ind=TRUE)
+remove_from_web=c(1, 6, 7, 13, 14, 16, 17, 22, 28, 31, 58, 59, 79, 83, 84, 92, 132, 139, 145, 147, 150, 151)
+web_tree=drop.tip(trimmed_tree,remove_from_web)
+plot(web_tree)
+
+#extract habitat
+web=setNames(asr[,2],rownames(asr))
+factorized_web=as.factor(web)
+
+#remove NAs from habitat dataset
+no.na.web<-web[!is.na(web)]
+no.na.web=as.factor(no.na.web)
+
+#map data matrix to tips (can either use habitat OR no.na.hab here)
+cols<-setNames(c("green","yellow", "red"),levels(no.na.web))
+plotTree.datamatrix(web_tree,as.data.frame(no.na.web),colors=list(cols),header=FALSE,fsize=0.25)
+legend("topright",legend=levels(no.na.web),pch=22,pt.cex=1.5,pt.bg=cols,bty="n",cex=0.8)
+
+#*****PROBLEM HERE
+#model fitting for ancestral state reconstruction
+#fit ER (equal rates) model, least complex model
+fitER=fitMk(web_tree,no.na.web,model="ER")
+#fit ARD (all rates different) model, less complex model
+fitARD=fitMk(web_tree,no.na.web,model="ARD")
+#fit SYM (?symmetric model) model, most complex model (of the three)
+fitSYM=fitMk(web_tree,no.na.web,model="SYM")
+
+#examine AIC values (Akaike Information Criterion, we want this to be as low as possible to indicate better fit)
+aic=c(AIC(fitER),AIC(fitARD),AIC(fitSYM))
+data.frame(model=c("ER","ARD","SYM"),logL=c(logLik(fitER),logLik(fitARD),logLik(fitSYM)),AIC=aic, delta.AIC=aic-min(aic))
+
+#*****PROBLEM HERE
+#put habitat date in dataframe for corHMM
+web.data=data.frame(taxon=names(no.na.web),no.na.web=as.numeric(no.na.web)-1)
+
+#*****PROBLEM HERE, FIXED! :-) rate.mat
+#fit marginal ancestral state reconstruction (you can also do joint ancestral state reconstructions)
+fit.marginal=corHMM(web_tree,web.data,node.states="marginal",rate.cat=1, rate.mat =matrix(c(NA,4,1,3,NA,2,3,4,NA),3,3))
+fit.marginal
+
+plotTree.datamatrix(web_tree,as.data.frame(no.na.web),colors=list(cols),header=FALSE,fsize=0.25)
+legend("topright",legend=levels(no.na.web),pch=22,pt.cex=1.5,pt.bg=cols,bty="n",cex=0.8)
+nodelabels(pie=fit.marginal$states,piecol=cols,cex=0.5)
+
+
+###FEMALE CRIBELLUM
+
+#create web specific tree by removing all tips that have an NA for this value
+#which(is.na(asr$Revised_Web), arr.ind=TRUE)
+remove_from_crib=c(13, 31, 49, 101, 117, 132)
+crib_tree=drop.tip(trimmed_tree,remove_from_crib)
+plot(crib_tree)
+
+#extract habitat
+crib=setNames(asr[,6],rownames(asr))
+factorized_crib=as.factor(crib)
+
+#remove NAs from habitat dataset
+no.na.crib<-crib[!is.na(crib)]
+no.na.crib=as.factor(no.na.crib)
+
+#map data matrix to tips (can either use habitat OR no.na.hab here)
+cols<-setNames(c("green","red","brown","blue","yellow"),levels(no.na.crib))
+plotTree.datamatrix(crib_tree,as.data.frame(no.na.crib),colors=list(cols),header=FALSE,fsize=0.45)
+legend("topright",legend=levels(no.na.crib),pch=22,pt.cex=1.5,pt.bg=cols,bty="n",cex=0.8)
+
+#*****PROBLEM HERE
+#model fitting for ancestral state reconstruction
+#fit ER (equal rates) model, least complex model
+fitER=fitMk(crib_tree,no.na.crib,model="ER")
+#fit ARD (all rates different) model, less complex model
+fitARD=fitMk(crib_tree,no.na.crib,model="ARD")
+#fit SYM (?symmetric model) model, most complex model (of the three)
+fitSYM=fitMk(crib_tree,no.na.crib,model="SYM")
+
+#examine AIC values (Akaike Information Criterion, we want this to be as low as possible to indicate better fit)
+aic=c(AIC(fitER),AIC(fitARD),AIC(fitSYM))
+data.frame(model=c("ER","ARD","SYM"),logL=c(logLik(fitER),logLik(fitARD),logLik(fitSYM)),AIC=aic, delta.AIC=aic-min(aic))
+
+
+#put habitat date in dataframe for corHMM
+crib.data=data.frame(taxon=names(no.na.crib),no.na.crib=as.numeric(no.na.crib)-1)
+
+#*****PROBLEM HERE, sorta fixed!
+#fit marginal ancestral state reconstruction (you can also do joint ancestral state reconstructions)
+fit.marginal=corHMM(crib_tree,crib.data,node.states="marginal",rate.cat=1,rate.mat = matrix(c(NA,17,3,7,11,15,NA,4,8,12,15,17,NA,9,13,16,1,5,NA,14,16,2,6,10,NA),5,5))
+fit.marginal
+
+plotTree.datamatrix(crib_tree,as.data.frame(no.na.crib),colors=list(cols),header=FALSE,fsize=0.25)
+legend("topright",legend=levels(no.na.crib),pch=22,pt.cex=1.5,pt.bg=cols,bty="n",cex=0.8)
+nodelabels(pie=fit.marginal$states,piecol=cols,cex=0.5)
+
+
