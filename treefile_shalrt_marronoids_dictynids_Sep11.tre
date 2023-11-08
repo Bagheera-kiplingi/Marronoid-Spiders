@@ -1,0 +1,291 @@
+#NEXUS
+begin taxa;
+	dimensions ntax=189;
+	taxlabels
+	Adenodictyna_kudoae_UCE
+	Agelena_sp_UCE
+	Agelenidae_sp_UCE
+	Agelenopsis_emertoni_UCE
+	Agelenopsis_pennsylvanica_UCE
+	Ajmonia_sp_China_UCE
+	Ajmonia_sp_SouthAfrica_8603_UCE
+	Ajmonia_sp_SouthAfrica_8899_UCE
+	Allagelena_opulenta_UCE
+	Altella_lucida_Canada_UCE
+	Amaurobius_fenestralis_UCE
+	Amaurobius_ferox_UCE
+	Amphinecta_sp_UCE
+	Anaxibia_caudiculata_Myanmar_UCE
+	Anaxibia_difficilis_SaoTome_UCE
+	Aorangia_sp_UCE
+	Arangina_sp_Australia_3640_UCE
+	Arangina_sp_NewZealand_UCE
+	Archaeodictyna_sp_SouthAfrica_8885_UCE
+	Arctella_lapponica_Canada_UCE
+	Argenna_obesa_Canada_UCE
+	Argenna_subnigra_Finland_UCE
+	Argyroneta_aquatica_Belgium_UCE
+	Argyroneta_aquatica_China_UCE
+	Argyroneta_aquatica_Denmark_UCE
+	Argyroneta_aquatica_Japan_UCE
+	Badumna_longinqua_UCE
+	Bannaella_tibialis_China_UCE
+	Barronopsis_texana_UCE
+	Blabomma_sp_UCE
+	Brigittea_latens_Bulgaria_UCE
+	Brigittea_sp_Crete_69_UCE
+	Brigittea_sp_India_UCE
+	Brigittea_sp_Myanmar_UCE
+	Brigittea_sp_SouthAfrica_8890_UCE
+	Brommella_punctosparsa_8116_UCE
+	Brommella_punctosparsa_8873_UCE
+	Brommella_punctosparsa_UCE
+	Caayguara_ybytyriguara_UCE
+	Callevophthalmus_sp_Australia_UCE
+	Callobius_sp_UCE
+	Calymmaria_persica_UCE
+	Calymmaria_sp_UCE
+	Cambridgea_sp_UCE
+	Chaerea_maritimus_France_UCE
+	Chresiona_sp_UCE
+	Chumma_inquieta_UCE
+	Cicurina_cicur_UCE
+	Cicurina_simplex_UCE
+	Cicurina_sp_cave_UCE
+	Cicurina_travisae_UCE
+	Cicurina_vibora_UCE
+	Coelotes_terrestris_517_UCE
+	Coras_lamellosus_UCE
+	Corasoides_sp_UCE
+	Cybaelous_pusillus_UCE
+	Cybaeodamus_taim_UCE
+	Cybaeozyga_sp_UCE
+	Cybaeus_mellotteei_UCE
+	Cybaeus_sp_USA_UCE
+	Cycloctenus_sp_UCE
+	Deinopis_sp_UCE
+	Desis_formidabilis_UCE
+	Desis_martensi_UCE
+	Devade_sp_Australia_UCE
+	Devade_tenella_Russia_UCE
+	Dictyna_agressa_CA_UCE
+	Dictyna_arundinacea_Finland_UCE
+	Dictyna_arundinacea_Russia_UCE
+	Dictyna_calcarata_AZ_UCE
+	Dictyna_cf_andesiana_cf_incredula_UCE
+	Dictyna_cf_foliacea_UCE
+	Dictyna_cf_incredula_Chile_UCE
+	Dictyna_cholla_MX_UCE
+	Dictyna_felis_UCE
+	Dictyna_foliicola_UCE
+	Dictyna_formidolosa_GA_UCE
+	Dictyna_sancta_UCE
+	Dictyna_sp_ME_UCE
+	Dictyna_sp_UCE
+	Dictyna_uncinata_Germany_UCE
+	Dictynidae_sp_3_UCE
+	Dictynidae_sp_Madagascar_5992_UCE
+	Dictynidae_sp_SouthAfrica_8884_UCE
+	Dictynidae_sp_South_Africa_UCE
+	Draconarius_nr_incertus_UCE
+	Emblyna_aiko_MX_UCE
+	Emblyna_completa_Canada_UCE
+	Emblyna_mitis_China_UCE
+	Emblyna_osceola_TurksCaicos_UCE
+	Emblyna_piratica_CA_UCE
+	Emblyna_serena_CA_UCE
+	Emblyna_sublata_UCE
+	Eratigena_atrica_UCE
+	Forsterella_sp_UCE
+	Forsterina_sp_UCE
+	Funny_valentine_UCE
+	Hackmania_prominula_Canada_UCE
+	Hahnia_corticicola_UCE
+	Hahnia_tanikawai_UCE
+	Hahnia_thorntoni_UCE
+	Hahniidae_sp_497_UCE
+	Hahniidae_sp_498_UCE
+	Hahniidae_sp_Madagascar_UCE
+	Hahniidae_sp_South_Africa_UCE
+	Heteropoda_simplex_UCE
+	Heteropoda_sp_UCE
+	Ischalea_sp_UCE
+	Iviella_reclusa_AZ_UCE
+	Iwogumoa_insidiosa_UCE
+	Lathys_affinis_UCE
+	Lathys_alberta_China_UCE
+	Lathys_chishuiensis_China_UCE
+	Lathys_delicatula_UCE
+	Lathys_humilis_Azerbaijan_UCE
+	Lathys_humilis_Canada_11_UCE
+	Lathys_humilis_Canada_82_UCE
+	Lathys_immaculata_Alabama_UCE
+	Lathys_insulana_Japan_UCE
+	Lathys_maculina_Alabama_UCE
+	Lathys_maculosa_Japan_UCE
+	Lathys_sexpustulata_France_UCE
+	Lathys_sp_Azores_UCE
+	Lathys_sp_n_CentralAfricanRepublic_UCE
+	Lathys_subalberta_China_UCE
+	Macrobunidae_sp_Africa_UCE
+	Macrobunidae_sp_UCE
+	Macrobunus_sp_UCE
+	Macrolathys_sp_Gabon_UCE
+	Macrolathys_sp_Tanzania_UCE
+	Malenella_nana_UCE
+	Mallos_dugesi_AZ_UCE
+	Mallos_pallidus_USA_UCE
+	Mamoea_rufa_UCE
+	Mashimo_sp_SouthAfrica_3223_UCE
+	Mastigusa_arietina_UCE
+	Metaltella_simoni_078_UCE
+	Metaltella_simoni_079_UCE
+	Mexitlia_trivittata_NM_UCE
+	Mizaga_racovitzai_UCE
+	NA
+	Neoantistea_quelpartensis_UCE
+	Neoramia_sp_660_UCE
+	Nigma_flavescens_France_UCE
+	Nigma_flavescens_Israel_UCE
+	Nigma_linsdalei_California_UCE
+	Nigma_puella_Crete_70_UCE
+	Nigma_walckenaeri_UCE
+	Novalena_sp_UCE
+	Oecobius_sp_UCE
+	Ommatauxesis_sp_UCE
+	Otagoa_sp_UCE
+	Pacificana_cockayni_UCE
+	Paradictyna_ilamia_NewZealand_UCE
+	Paraharctella_sp_Australia_7383_UCE
+	Paramatachia_sp_UCE
+	Paratheuma_awasensis
+	Paratheuma_insulana_TurksCaicos_UCE
+	Parazanomys_sp_UCE
+	Penestomus_egazini_UCE
+	Phantyna_micro_Canada_UCE
+	Pireneitega_luctuosa_239_UCE
+	Porteria_eddardstarki_UCE
+	Saltonia_incerta_1736_UCE
+	Saltonia_incerta_1755_UCE
+	Stiphidion_sp_UCE
+	Sudesna_hedini_SouthKorea_UCE
+	Sudesna_sp_China_2249_UCE
+	Sudesna_sp_China_2426_UCE
+	Tahuantina_zapfeae_Chile_UCE
+	Taira_flavidorsalis_UCE
+	Tamgrinia_alveolifera_UCE
+	Tamgrinia_tibetana_UCE
+	Taurongia_sp_UCE
+	Tegecoelotes_secundus_UCE
+	Thallumetus_cf_simoni_Ecuador_UCE
+	Titanoeca_sp_UCE
+	Tivyna_spatula_Peru_UCE
+	Toxops_sp_UCE
+	Toxopsiella_sp_UCE
+	Tricholathys_cf_hirsutipes_CA_UCE
+	Tricholathys_sp_CA_UCE
+	Uloborus_glomosus_UCE
+	Uroctea_durandi_UCE
+	Viridictyna_nelsonensis_NewZealand_UCE
+	Ypypuera_sp_UCE
+	cf_Badumna_sp_UCE
+	cf_Desis_sp_0001_UCE
+	cf_Lathys_sp_Germany_UCE
+;
+end;
+
+begin trees;
+	tree tree_1 = [&R] (Ajmonia_sp_China_UCE:0.062413,(((((((((Ajmonia_sp_SouthAfrica_8899_UCE:0.005035,Ajmonia_sp_SouthAfrica_8603_UCE:0.024399)[&bootstrap/shalrt="100/100"]:0.063925,Nigma_linsdalei_California_UCE:0.038448)[&bootstrap/shalrt="100/50"]:0.005075,(Adenodictyna_kudoae_UCE:0.051711,Anaxibia_caudiculata_Myanmar_UCE:0.106576)[&bootstrap/shalrt="83.3/50"]:0.003294)[&bootstrap/shalrt="100/100"]:0.004823,(((Nigma_puella_Crete_70_UCE:0.018261,Nigma_flavescens_Israel_UCE:0.019916)[&bootstrap/shalrt="38.8/99"]:0.001183,Nigma_flavescens_France_UCE:0.032908)[&bootstrap/shalrt="61.4/45"]:0.004198,Nigma_walckenaeri_UCE:0.019578)[&bootstrap/shalrt="100/100"]:0.031466)[&bootstrap/shalrt="100/100"]:0.0325,(Anaxibia_difficilis_SaoTome_UCE:0.060124,(Dictynidae_sp_South_Africa_UCE:0.006765,Mashimo_sp_SouthAfrica_3223_UCE:0.005375)[&bootstrap/shalrt="100/100"]:0.034122)[&bootstrap/shalrt="100/100"]:0.016567)[&bootstrap/shalrt="100/100"]:0.023756,(Thallumetus_cf_simoni_Ecuador_UCE:0.057853,Tahuantina_zapfeae_Chile_UCE:0.045288)[&bootstrap/shalrt="100/100"]:0.058881)[&bootstrap/shalrt="99.9/100"]:0.007526,(((((((((((Macrobunidae_sp_Africa_UCE:0.029656,Dictynidae_sp_3_UCE:0.033201)[&bootstrap/shalrt="100/100"]:0.024344,(((Chresiona_sp_UCE:0.053075,Chumma_inquieta_UCE:0.050196)[&bootstrap/shalrt="100/100"]:0.017993,(Malenella_nana_UCE:0.077384,(Parazanomys_sp_UCE:0.039372,Funny_valentine_UCE:0.052724)[&bootstrap/shalrt="100/100"]:0.031898)[&bootstrap/shalrt="100/100"]:0.006382)[&bootstrap/shalrt="100/100"]:0.00886,(Macrobunus_sp_UCE:0.027245,Macrobunidae_sp_UCE:0.020959)[&bootstrap/shalrt="100/100"]:0.033218)[&bootstrap/shalrt="100/100"]:0.007378)[&bootstrap/shalrt="100/100"]:0.027124,(((Aorangia_sp_UCE:0.067114,(((Desis_formidabilis_UCE:0.014867,Desis_martensi_UCE:0.042715)[&bootstrap/shalrt="100/100"]:0.073592,((((cf_Badumna_sp_UCE:0.045588,((cf_Desis_sp_0001_UCE:0.016595,Paramatachia_sp_UCE:0.031922)[&bootstrap/shalrt="100/100"]:0.022501,Otagoa_sp_UCE:0.049944)[&bootstrap/shalrt="100/100"]:0.009613)[&bootstrap/shalrt="100/100"]:0.013136,Badumna_longinqua_UCE:0.065739)[&bootstrap/shalrt="100/100"]:0.014031,((Porteria_eddardstarki_UCE:0.031089,Corasoides_sp_UCE:0.029356)[&bootstrap/shalrt="98.6/100"]:0.003676,Cambridgea_sp_UCE:0.035573)[&bootstrap/shalrt="100/100"]:0.031619)[&bootstrap/shalrt="100/100"]:0.004526,((Ischalea_sp_UCE:0.046074,(Mamoea_rufa_UCE:0.035169,Amphinecta_sp_UCE:0.046475)[&bootstrap/shalrt="100/100"]:0.015658)[&bootstrap/shalrt="28.6/84"]:0.003068,(Metaltella_simoni_078_UCE:0.002444,Metaltella_simoni_079_UCE:0.002897)[&bootstrap/shalrt="100/100"]:0.058143)[&bootstrap/shalrt="100/100"]:0.002823)[&bootstrap/shalrt="100/100"]:0.015734)[&bootstrap/shalrt="100/100"]:0.009223,((Stiphidion_sp_UCE:0.031026,(Forsterina_sp_UCE:0.001585,Taurongia_sp_UCE:0.002378)[&bootstrap/shalrt="100/100"]:0.025705)[&bootstrap/shalrt="100/100"]:0.015007,Neoramia_sp_660_UCE:0.066064)[&bootstrap/shalrt="100/100"]:0.014611)[&bootstrap/shalrt="100/100"]:0.00886)[&bootstrap/shalrt="100/100"]:0.008332,((Toxopsiella_sp_UCE:0.022774,Cycloctenus_sp_UCE:0.038841)[&bootstrap/shalrt="100/100"]:0.015449,Pacificana_cockayni_UCE:0.038235)[&bootstrap/shalrt="100/100"]:0.019746)[&bootstrap/shalrt="100/100"]:0.0304,(((((((Draconarius_nr_incertus_UCE:0.014346,Agelenidae_sp_UCE:0.012083)[&bootstrap/shalrt="100/100"]:0.00183,Coras_lamellosus_UCE:0.01607)[&bootstrap/shalrt="100/100"]:0.003147,(((Tegecoelotes_secundus_UCE:0.015341,Coelotes_terrestris_517_UCE:0.015968)[&bootstrap/shalrt="41.4/99"]:0.001035,Pireneitega_luctuosa_239_UCE:0.01342)[&bootstrap/shalrt="100/100"]:0.008337,Iwogumoa_insidiosa_UCE:0.022941)[&bootstrap/shalrt="100/100"]:0.00563)[&bootstrap/shalrt="100/100"]:0.016385,(((Agelena_sp_UCE:0.00698,Allagelena_opulenta_UCE:0.006843)[&bootstrap/shalrt="100/100"]:0.009222,((Barronopsis_texana_UCE:0.001455,Agelenopsis_emertoni_UCE:4.6E-4)[&bootstrap/shalrt="100/100"]:0.006296,Agelenopsis_pennsylvanica_UCE:0.013827)[&bootstrap/shalrt="100/100"]:0.008892)[&bootstrap/shalrt="100/100"]:0.010842,Novalena_sp_UCE:0.023045)[&bootstrap/shalrt="100/100"]:0.020201)[&bootstrap/shalrt="100/100"]:0.004086,Eratigena_atrica_UCE:0.034192)[&bootstrap/shalrt="100/100"]:0.010281,(Tamgrinia_alveolifera_UCE:0.005597,Tamgrinia_tibetana_UCE:0.015587)[&bootstrap/shalrt="100/100"]:0.04169)[&bootstrap/shalrt="100/100"]:0.057975,((((Heteropoda_simplex_UCE:0.00872,Heteropoda_sp_UCE:0.006435)[&bootstrap/shalrt="100/100"]:0.018514,Caayguara_ybytyriguara_UCE:0.038444)[&bootstrap/shalrt="100/100"]:0.059023,((((((Ypypuera_sp_UCE:0.123754,(Uroctea_durandi_UCE:0.099999,Oecobius_sp_UCE:0.13865)[&bootstrap/shalrt="100/100"]:0.035212)[&bootstrap/shalrt="100/100"]:0.018707,Deinopis_sp_UCE:0.148793)[&bootstrap/shalrt="100/100"]:0.01672,Uloborus_glomosus_UCE:0.247383)[&bootstrap/shalrt="100/100"]:0.059531,Titanoeca_sp_UCE:0.232108)[&bootstrap/shalrt="100/100"]:0.01868,Penestomus_egazini_UCE:0.171551)[&bootstrap/shalrt="64.2/66"]:0.010669,(Forsterella_sp_UCE:0.051463,Cybaeodamus_taim_UCE:0.051038)[&bootstrap/shalrt="100/100"]:0.0885)[&bootstrap/shalrt="100/100"]:0.019068)[&bootstrap/shalrt="100/100"]:0.015032,(((Taira_flavidorsalis_UCE:0.024857,Amaurobius_ferox_UCE:0.036461)[&bootstrap/shalrt="22.7/96"]:0.002707,Amaurobius_fenestralis_UCE:0.027469)[&bootstrap/shalrt="57.2/98"]:0.00268,Callobius_sp_UCE:0.028747)[&bootstrap/shalrt="100/100"]:0.066211)[&bootstrap/shalrt="100/100"]:0.029883)[&bootstrap/shalrt="100/100"]:0.008333)[&bootstrap/shalrt="100/100"]:0.023154)[&bootstrap/shalrt="100/100"]:0.014628,((((((((Hahniidae_sp_497_UCE:0.00169,Hahniidae_sp_498_UCE:0.002181)[&bootstrap/shalrt="100/100"]:0.008635,Hahnia_tanikawai_UCE:0.01146)[&bootstrap/shalrt="100/100"]:0.00738,Hahnia_thorntoni_UCE:0.01962)[&bootstrap/shalrt="100/100"]:0.012059,Hahnia_corticicola_UCE:0.057143)[&bootstrap/shalrt="100/100"]:0.029652,Hahniidae_sp_Madagascar_UCE:0.032493)[&bootstrap/shalrt="100/100"]:0.016879,Hahniidae_sp_South_Africa_UCE:0.034097)[&bootstrap/shalrt="100/100"]:0.01529,Cybaelous_pusillus_UCE:0.061942)[&bootstrap/shalrt="100/100"]:0.011155,Neoantistea_quelpartensis_UCE:0.124062)[&bootstrap/shalrt="100/100"]:0.104883)[&bootstrap/shalrt="100/100"]:0.032018,(((Blabomma_sp_UCE:0.044931,Cybaeozyga_sp_UCE:0.049862)[&bootstrap/shalrt="0/11"]:0.002343,((Cybaeus_sp_USA_UCE:0.013221,Cybaeus_mellotteei_UCE:0.015724)[&bootstrap/shalrt="100/100"]:0.02482,(Calymmaria_persica_UCE:0.016707,Calymmaria_sp_UCE:0.021247)[&bootstrap/shalrt="100/100"]:0.031036)[&bootstrap/shalrt="100/100"]:0.005219)[&bootstrap/shalrt="100/100"]:0.021087,Mastigusa_arietina_UCE:0.069017)[&bootstrap/shalrt="97.8/96"]:0.007947)[&bootstrap/shalrt="100/98"]:0.006779,(((Cicurina_simplex_UCE:0.017337,Cicurina_cicur_UCE:0.023227)[&bootstrap/shalrt="100/100"]:0.005795,(Cicurina_sp_cave_UCE:0.027258,(Cicurina_vibora_UCE:0.005658,Cicurina_travisae_UCE:0.00397)[&bootstrap/shalrt="100/100"]:0.023688)[&bootstrap/shalrt="100/100"]:0.004758)[&bootstrap/shalrt="100/100"]:0.033706,((Brommella_punctosparsa_8873_UCE:0.002472,Brommella_punctosparsa_8116_UCE:5.87E-4)[&bootstrap/shalrt="99.9/100"]:9.53E-4,Brommella_punctosparsa_UCE:0.00375)[&bootstrap/shalrt="100/100"]:0.053013)[&bootstrap/shalrt="100/100"]:0.006086)[&bootstrap/shalrt="100/100"]:0.015821,(Ommatauxesis_sp_UCE:0.045101,Toxops_sp_UCE:0.054658)[&bootstrap/shalrt="100/100"]:0.052122)[&bootstrap/shalrt="100/96"]:0.012875,(((((((((Lathys_humilis_Canada_82_UCE:0.014465,cf_Lathys_sp_Germany_UCE:0.004007)[&bootstrap/shalrt="100/100"]:0.0016,(Lathys_humilis_Azerbaijan_UCE:0.007746,Lathys_humilis_Canada_11_UCE:0.007048)[&bootstrap/shalrt="61.8/99"]:4.35E-4)[&bootstrap/shalrt="100/100"]:0.015525,Lathys_sexpustulata_France_UCE:0.020023)[&bootstrap/shalrt="100/100"]:0.010468,((Lathys_subalberta_China_UCE:0.001862,Lathys_maculosa_Japan_UCE:0.0079)[&bootstrap/shalrt="100/100"]:0.009015,Lathys_alberta_China_UCE:0.011221)[&bootstrap/shalrt="100/100"]:0.012589)[&bootstrap/shalrt="100/100"]:0.00242,(Lathys_sp_Azores_UCE:0.016655,Lathys_affinis_UCE:0.015728)[&bootstrap/shalrt="100/100"]:0.010624)[&bootstrap/shalrt="100/100"]:0.005008,(Lathys_delicatula_UCE:0.020513,(Lathys_maculina_Alabama_UCE:0.010731,Lathys_immaculata_Alabama_UCE:0.011021)[&bootstrap/shalrt="100/100"]:0.009321)[&bootstrap/shalrt="100/100"]:0.012117)[&bootstrap/shalrt="100/100"]:0.016338,((Lathys_insulana_Japan_UCE:0.023297,Lathys_chishuiensis_China_UCE:0.020422)[&bootstrap/shalrt="49.8/99"]:8.45E-4,Bannaella_tibialis_China_UCE:0.030461)[&bootstrap/shalrt="100/100"]:0.023537)[&bootstrap/shalrt="100/98"]:0.007482,((Dictynidae_sp_SouthAfrica_8884_UCE:0.045701,Lathys_sp_n_CentralAfricanRepublic_UCE:0.060098)[&bootstrap/shalrt="43.9/88"]:0.009048,Macrolathys_sp_Tanzania_UCE:0.056507)[&bootstrap/shalrt="100/98"]:0.015309)[&bootstrap/shalrt="39.4/83"]:0.004141,Macrolathys_sp_Gabon_UCE:0.176873)[&bootstrap/shalrt="100/90"]:0.063599)[&bootstrap/shalrt="100/100"]:0.046593,((((((Arctella_lapponica_Canada_UCE:0.022213,(Iviella_reclusa_AZ_UCE:0.015283,(Tricholathys_sp_CA_UCE:0.00625,Tricholathys_cf_hirsutipes_CA_UCE:0.002544)[&bootstrap/shalrt="90.6/98"]:0.005234)[&bootstrap/shalrt="100/100"]:0.014067)[&bootstrap/shalrt="100/100"]:0.008051,((Argenna_subnigra_Finland_UCE:0.011958,Argenna_obesa_Canada_UCE:0.012284)[&bootstrap/shalrt="100/100"]:0.012526,Chaerea_maritimus_France_UCE:0.020285)[&bootstrap/shalrt="100/100"]:0.025334)[&bootstrap/shalrt="100/100"]:0.014505,((Argyroneta_aquatica_Denmark_UCE:3.78E-4,((Argyroneta_aquatica_Japan_UCE:0.006305,Argyroneta_aquatica_China_UCE:0.001312)[&bootstrap/shalrt="100/100"]:9.97E-4,Argyroneta_aquatica_Belgium_UCE:0.003941)[&bootstrap/shalrt="100/100"]:0.002955)[&bootstrap/shalrt="100/100"]:0.022593,Mizaga_racovitzai_UCE:0.026897)[&bootstrap/shalrt="100/100"]:0.015984)[&bootstrap/shalrt="100/100"]:0.006771,Hackmania_prominula_Canada_UCE:0.057902)[&bootstrap/shalrt="100/100"]:0.015787,(Paratheuma_awasensis:0.011588,Paratheuma_insulana_TurksCaicos_UCE:0.012008)[&bootstrap/shalrt="100/100"]:0.067197)[&bootstrap/shalrt="100/100"]:0.013273,((((Saltonia_incerta_1736_UCE:7.89E-4,(Saltonia_incerta_1755_UCE:2.0E-6,Altella_lucida_Canada_UCE:2.0E-6)[&bootstrap/shalrt="100/49"]:0.004621)[&bootstrap/shalrt="100/100"]:0.030876,Devade_tenella_Russia_UCE:0.044853)[&bootstrap/shalrt="66.2/95"]:0.004368,Devade_sp_Australia_UCE:0.046348)[&bootstrap/shalrt="100/96"]:0.021229,Paraharctella_sp_Australia_7383_UCE:0.110965)[&bootstrap/shalrt="100/88"]:0.034126)[&bootstrap/shalrt="100/88"]:0.010384)[&bootstrap/shalrt="100/90"]:0.05834,(Mexitlia_trivittata_NM_UCE:0.032252,(Mallos_dugesi_AZ_UCE:0.018556,(NA:0.007399,Mallos_pallidus_USA_UCE:0.006449)[&bootstrap/shalrt="100/100"]:0.024031)[&bootstrap/shalrt="100/100"]:0.021987)[&bootstrap/shalrt="100/100"]:0.082532)[&bootstrap/shalrt="88.9/83"]:0.011924,((Paradictyna_ilamia_NewZealand_UCE:0.011082,Viridictyna_nelsonensis_NewZealand_UCE:0.015891)[&bootstrap/shalrt="100/100"]:0.07184,Callevophthalmus_sp_Australia_UCE:0.103371)[&bootstrap/shalrt="100/100"]:0.020806)[&bootstrap/shalrt="100/90"]:0.067252)[&bootstrap/shalrt="100/90"]:0.010266,(Sudesna_hedini_SouthKorea_UCE:0.030068,(Sudesna_sp_China_2249_UCE:0.021286,Sudesna_sp_China_2426_UCE:0.024888)[&bootstrap/shalrt="29.1/98"]:0.00171)[&bootstrap/shalrt="100/100"]:0.050733)[&bootstrap/shalrt="100/90"]:0.024334,(((Brigittea_sp_Crete_69_UCE:0.009334,Brigittea_latens_Bulgaria_UCE:0.038486)[&bootstrap/shalrt="100/100"]:0.048983,(Brigittea_sp_SouthAfrica_8890_UCE:0.026252,Brigittea_sp_India_UCE:0.032795)[&bootstrap/shalrt="100/100"]:0.038337)[&bootstrap/shalrt="73.9/89"]:0.006488,Brigittea_sp_Myanmar_UCE:0.118174)[&bootstrap/shalrt="100/93"]:0.021042)[&bootstrap/shalrt="100/100"]:0.035909,((((Archaeodictyna_sp_SouthAfrica_8885_UCE:0.064773,Dictynidae_sp_Madagascar_5992_UCE:0.071535)[&bootstrap/shalrt="100/100"]:0.02915,(((((Dictyna_cf_andesiana_cf_incredula_UCE:0.01923,(Emblyna_aiko_MX_UCE:0.006273,Emblyna_piratica_CA_UCE:0.006797)[&bootstrap/shalrt="100/100"]:0.0122)[&bootstrap/shalrt="100/100"]:0.011987,((Emblyna_serena_CA_UCE:0.001866,Emblyna_completa_Canada_UCE:0.007135)[&bootstrap/shalrt="100/100"]:0.019807,Dictyna_cholla_MX_UCE:0.04673)[&bootstrap/shalrt="30.1/88"]:0.00237)[&bootstrap/shalrt="100/100"]:0.005163,(((((((Dictyna_arundinacea_Finland_UCE:0.005009,Emblyna_mitis_China_UCE:0.006247)[&bootstrap/shalrt="100/100"]:0.004353,Dictyna_arundinacea_Russia_UCE:0.013836)[&bootstrap/shalrt="99.9/100"]:0.002009,Dictyna_uncinata_Germany_UCE:0.009758)[&bootstrap/shalrt="100/100"]:0.00465,Dictyna_sancta_UCE:0.026997)[&bootstrap/shalrt="41.5/98"]:5.44E-4,Dictyna_sp_ME_UCE:0.052719)[&bootstrap/shalrt="62.2/98"]:0.001187,(Dictyna_cf_foliacea_UCE:0.009048,Emblyna_sublata_UCE:0.015852)[&bootstrap/shalrt="99.9/87"]:0.002469)[&bootstrap/shalrt="76.7/83"]:0.003124,Emblyna_osceola_TurksCaicos_UCE:0.033275)[&bootstrap/shalrt="100/100"]:0.016197)[&bootstrap/shalrt="100/100"]:0.007673,((Dictyna_formidolosa_GA_UCE:0.018772,(Phantyna_micro_Canada_UCE:0.023033,Dictyna_agressa_CA_UCE:0.013656)[&bootstrap/shalrt="79.8/96"]:0.006472)[&bootstrap/shalrt="100/100"]:0.013731,(Dictyna_calcarata_AZ_UCE:0.061936,Tivyna_spatula_Peru_UCE:0.039833)[&bootstrap/shalrt="78.3/95"]:0.004679)[&bootstrap/shalrt="100/100"]:0.021394)[&bootstrap/shalrt="100/100"]:0.014196,(Arangina_sp_Australia_3640_UCE:0.048308,Arangina_sp_NewZealand_UCE:0.024331)[&bootstrap/shalrt="100/100"]:0.04841)[&bootstrap/shalrt="83.3/94"]:0.003044)[&bootstrap/shalrt="100/100"]:0.006137,((Dictyna_felis_UCE:0.001029,Dictyna_sp_UCE:0.001022)[&bootstrap/shalrt="100/100"]:0.014828,Dictyna_foliicola_UCE:0.028876)[&bootstrap/shalrt="100/100"]:0.044426)[&bootstrap/shalrt="100/100"]:0.009526,Dictyna_cf_incredula_Chile_UCE:0.037185)[&bootstrap/shalrt="100/100"]:0.012814);
+end;
+
+begin figtree;
+	set appearance.backgroundColorAttribute="Default";
+	set appearance.backgroundColour=#ffffff;
+	set appearance.branchColorAttribute="User selection";
+	set appearance.branchColorGradient=false;
+	set appearance.branchLineWidth=1.0;
+	set appearance.branchMinLineWidth=0.0;
+	set appearance.branchWidthAttribute="Fixed";
+	set appearance.foregroundColour=#000000;
+	set appearance.hilightingGradient=false;
+	set appearance.selectionColour=#2d3680;
+	set branchLabels.colorAttribute="User selection";
+	set branchLabels.displayAttribute="Branch times";
+	set branchLabels.fontName="sansserif";
+	set branchLabels.fontSize=8;
+	set branchLabels.fontStyle=0;
+	set branchLabels.isShown=false;
+	set branchLabels.significantDigits=4;
+	set layout.expansion=891;
+	set layout.layoutType="RECTILINEAR";
+	set layout.zoom=327;
+	set legend.attribute=null;
+	set legend.fontSize=10.0;
+	set legend.isShown=false;
+	set legend.significantDigits=4;
+	set nodeBars.barWidth=4.0;
+	set nodeBars.displayAttribute=null;
+	set nodeBars.isShown=false;
+	set nodeLabels.colorAttribute="User selection";
+	set nodeLabels.displayAttribute="bootstrap/shalrt";
+	set nodeLabels.fontName="sansserif";
+	set nodeLabels.fontSize=12;
+	set nodeLabels.fontStyle=0;
+	set nodeLabels.isShown=true;
+	set nodeLabels.significantDigits=4;
+	set nodeShapeExternal.colourAttribute=null;
+	set nodeShapeExternal.isShown=false;
+	set nodeShapeExternal.minSize=10.0;
+	set nodeShapeExternal.scaleType=Width;
+	set nodeShapeExternal.shapeType=Circle;
+	set nodeShapeExternal.size=4.0;
+	set nodeShapeExternal.sizeAttribute=null;
+	set nodeShapeInternal.colourAttribute=null;
+	set nodeShapeInternal.isShown=false;
+	set nodeShapeInternal.minSize=10.0;
+	set nodeShapeInternal.scaleType=Width;
+	set nodeShapeInternal.shapeType=Circle;
+	set nodeShapeInternal.size=4.0;
+	set nodeShapeInternal.sizeAttribute=null;
+	set polarLayout.alignTipLabels=false;
+	set polarLayout.angularRange=0;
+	set polarLayout.rootAngle=0;
+	set polarLayout.rootLength=100;
+	set polarLayout.showRoot=true;
+	set radialLayout.spread=0.0;
+	set rectilinearLayout.alignTipLabels=false;
+	set rectilinearLayout.curvature=0;
+	set rectilinearLayout.rootLength=100;
+	set scale.offsetAge=0.0;
+	set scale.rootAge=1.0;
+	set scale.scaleFactor=1.0;
+	set scale.scaleRoot=false;
+	set scaleAxis.automaticScale=true;
+	set scaleAxis.fontSize=8.0;
+	set scaleAxis.isShown=false;
+	set scaleAxis.lineWidth=1.0;
+	set scaleAxis.majorTicks=1.0;
+	set scaleAxis.minorTicks=0.5;
+	set scaleAxis.origin=0.0;
+	set scaleAxis.reverseAxis=false;
+	set scaleAxis.showGrid=true;
+	set scaleBar.automaticScale=true;
+	set scaleBar.fontSize=10.0;
+	set scaleBar.isShown=true;
+	set scaleBar.lineWidth=1.0;
+	set scaleBar.scaleRange=0.0;
+	set tipLabels.colorAttribute="User selection";
+	set tipLabels.displayAttribute="Names";
+	set tipLabels.fontName="sansserif";
+	set tipLabels.fontSize=20;
+	set tipLabels.fontStyle=0;
+	set tipLabels.isShown=true;
+	set tipLabels.significantDigits=4;
+	set trees.order=true;
+	set trees.orderType="decreasing";
+	set trees.rooting=true;
+	set trees.rootingType="User Selection";
+	set trees.transform=false;
+	set trees.transformType="cladogram";
+end;
+
